@@ -2,10 +2,12 @@ package tech.lowspeccorgi.Quark.Elements;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Optional;
 
 public class ElementManager
 {
     private ArrayList<Element> elements;
+    private ArrayList<String> elementIdQueue;
 
     /**
      * Constructs an ElementManager given a set of elements
@@ -27,6 +29,43 @@ public class ElementManager
     }
 
     /**
+     * Clears the element list
+     * @author Basilicous
+     */
+    public void clear()
+    {
+        elements.clear();
+    }
+
+    /**
+     * Adds a element to the element list
+     * @param element The element to add
+     */
+    public void addElement(Element element)
+    {
+        this.elements.add(element);
+    }
+
+    /**
+     * Adds a element to the element list
+     * @param elements The element to add
+     */
+    public void addElements(Element... elements)
+    {
+        for (int i = 0; i < elements.length; i++)
+        {
+            this.elements.add(elements[i]);
+        }
+    }
+
+    public Optional<Element> getElementByID(String Id)
+    {
+        return this.elements.stream()
+                .filter(e -> e.id.equals(Id))
+                .findAny();
+    }
+
+    /**
      * This should be called in the "init" function
      * @author Basilicous
      */
@@ -39,8 +78,18 @@ public class ElementManager
      * This should be called in the "render" function
      * @author Basilicous
      */
-    public void onRender()
+    public void onRender(int mouseX, int mouseY, float partialTicks)
     {
-        elements.forEach(e -> e.onRender());
+        elements.forEach(e -> e.onRender(mouseX, mouseY, partialTicks));
+    }
+
+    public void onKeyTyped(char typedChar, int keyCode)
+    {
+        elements.forEach(e -> e.onKeyTyped(typedChar, keyCode));
+    }
+
+    public void onMouseClicked(int mouseX, int mouseY, int mouseButton)
+    {
+        elements.forEach(e -> e.onMouseClick(mouseX, mouseY, mouseButton));
     }
 }

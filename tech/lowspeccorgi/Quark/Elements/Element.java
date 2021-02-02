@@ -1,16 +1,18 @@
 package tech.lowspeccorgi.Quark.Elements;
 
+import tech.lowspeccorgi.Quark.Util.Vec2;
+
 /**
  * This is the base class for creating an Element
  * @author Basilicous
  */
 public class Element
 {
-    private final String id;
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    protected final String id;
+    protected int x;
+    protected int y;
+    protected int width;
+    protected int height;
 
     /**
      * Creates an Element, but specifies width
@@ -135,11 +137,26 @@ public class Element
         return y;
     }
 
+    public float getAspectRatio()
+    {
+        return this.width / this.height;
+    }
+
     /**
      * The render function of the element, elements should not be self rendered, instead rendered in the manager
      * @author Basilicous
      */
-    public void onRender()
+    public void onRender(int mouseX, int mouseY, float partialTicks)
+    {
+        //
+    }
+
+    public void onKeyTyped(char typedChar, int keyCode)
+    {
+        //
+    }
+
+    public void onMouseClick(int mouseX, int mouseY, int mouseButton)
     {
         //
     }
