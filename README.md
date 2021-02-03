@@ -1,15 +1,11 @@
 # gui-framework
 An attempt to make a ui framework in Java, with the intent to be used with minecraft
 
-Using raw opengl now :sunglasses:
-please don't use this
+This is now in a semi working state :D.
 
-it's still in heavy development
+Should you use it?
 
-~~https://github.com/memononen/nanovg~~
-~~I've chosen to use nanovg for this project, as it allows me to draw stuff easily and has lwjgl support ect~~
-~~I'm not using nanovg widgets or anything~~
-I just want an easy library to draw shit
+Depends. It's pretty basic but it works nicely, and has no problems, and probably will make GUI creation much easier.
 
 # Example
 ```java
