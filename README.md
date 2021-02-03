@@ -8,6 +8,19 @@ Should you use it?
 
 Depends. It's pretty basic but it works nicely, and has no problems, and probably will make GUI creation much easier.
 
+# So... How do I install it?
+It's pretty simple, just download the code of this repo, and drag it into your project's folder.
+
+# How do I add new elements?
+Well, you can simply extend the Element class, and use that to create custom Elements.
+
+# How do I customise the look?
+1. I want to customise the shapes:
+    1. RectStyle has quite a good amount of customisation built in, howerver you can extend RectStyle and make your own rendering function
+2. I want to customise the elements:
+    1. You can directly go and edit the source of the elements, if you really want to
+    2. You could also just create another element with similar functionality, but with your own customisations
+
 # Example
 ```java
 package com.example.examplemod;
