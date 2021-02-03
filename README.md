@@ -29,6 +29,11 @@ Well, you can simply extend the Element class, and use that to create custom Ele
 ## X Element isn't implemented
 This isn't meant to have many Elements, to make it as extensible as possible, if you really want to see an element implemented, just make a pr, or if you can't be bothered to code said element, just create an issue, for a feature request.
 
+## Plans
+- [ ] Add toggle button
+- [ ] Add text to default button element
+- [ ] idk
+
 ## Example
 ```java
 package com.example.examplemod;
