@@ -1,5 +1,5 @@
 
-# (Quark) -> Minecraft GUI framework ![logo](logo.png)
+# (Quark) -> Minecraft GUI framework
 An attempt to make a ui framework in Java, with the intent to be used with minecraft
 
 This is now in a semi working state :D.
