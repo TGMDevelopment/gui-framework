@@ -7,7 +7,6 @@ import java.util.Optional;
 public class ElementManager
 {
     private ArrayList<Element> elements;
-    private ArrayList<String> elementIdQueue;
 
     /**
      * Constructs an ElementManager given a set of elements

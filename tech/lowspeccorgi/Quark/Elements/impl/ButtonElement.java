@@ -31,7 +31,6 @@ public class ButtonElement extends Element
     @Override
     public void onRender(int mouseX, int mouseY, float partialTicks)
     {
-
         this.pressed = (Mouse.getEventButton() == 0) && (this.hovered == true) && (Mouse.getEventButtonState() == true);
         this.hovered = (mouseX > this.x) && (mouseX < this.width) && (mouseY > this.y) && (mouseY < this.height);
         Color color = (hovered) ? (pressed) ? pressColor : hoverColor : neutralColor;
