@@ -1,27 +1,35 @@
-
 # (Quark) -> Minecraft GUI framework
 An attempt to make a ui framework in Java, with the intent to be used with minecraft
 
 This is now in a semi working state :D.
 
-Should you use it?
+## Should I use it?
+Depends. It's pretty basic but it works nicely, and has no problems, and probably will make GUI creation much easier. It also doesn't have much bloat in terms of things like elements, making it easy to make it your own. It's also pretty easy to make elements and customise them.
 
-Depends. It's pretty basic but it works nicely, and has no problems, and probably will make GUI creation much easier.
+## Contributing
+1. Follow the these code guidelines, that have been demonstrated throughout my code
+2. No external libraries. The only libraries that can be used as of now, are any libraries included in vanilla minecraft 1.8.9, and the Java standard library
+3. The code has to actually work :pensive:
+4. Please make your code readable, and try to make things efficient
+5. Please try and add Javadocs, I know I haven't done a very good job w javadocs, but please at least try
 
-# So... How do I install it?
+## So... How do I install it?
 It's pretty simple, just download the code of this repo, and drag it into your project's folder.
 
-# How do I add new elements?
+## How do I add new elements?
 Well, you can simply extend the Element class, and use that to create custom Elements.
 
-# How do I customise the look?
+## How do I customise the look?
 1. I want to customise the shapes:
     1. RectStyle has quite a good amount of customisation built in, howerver you can extend RectStyle and make your own rendering function
 2. I want to customise the elements:
     1. You can directly go and edit the source of the elements, if you really want to
     2. You could also just create another element with similar functionality, but with your own customisations
 
-# Example
+## X Element isn't implemented
+This isn't meant to have many Elements, to make it as extensible as possible, if you really want to see an element implemented, just make a pr, or if you can't be bothered to code said element, just create an issue, for a feature request.
+
+## Example
 ```java
 package com.example.examplemod;
 
