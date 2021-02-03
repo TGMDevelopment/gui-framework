@@ -1,14 +1,9 @@
 package tech.lowspeccorgi.Quark.Elements.impl;
 
-import net.minecraft.client.Minecraft;
-import org.lwjgl.input.Mouse;
 import tech.lowspeccorgi.Quark.Elements.Element;
 import tech.lowspeccorgi.Quark.Style.Anchor;
 import tech.lowspeccorgi.Quark.Style.RectStyle;
 import tech.lowspeccorgi.Quark.Style.TextStyle;
-import tech.lowspeccorgi.Quark.primitives.Primitives;
-
-import java.awt.*;
 
 public class CardElement extends Element
 {

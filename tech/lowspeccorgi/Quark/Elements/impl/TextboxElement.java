@@ -3,7 +3,6 @@ package tech.lowspeccorgi.Quark.Elements.impl;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ChatAllowedCharacters;
 import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
 import tech.lowspeccorgi.Quark.Elements.Element;
 import tech.lowspeccorgi.Quark.Style.RectStyle;
 import tech.lowspeccorgi.Quark.primitives.Primitives;
