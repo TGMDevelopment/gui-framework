@@ -17,21 +17,12 @@ public class ButtonElement extends Element
     private Color neutralColor;
     private RectStyle rectStyle;
 
-    public ButtonElement(String id, int x, int y, int width, int height, Color hoverColor, Color pressColor, Color neutralColor, String buttonText) {
+    public ButtonElement(String id, int x, int y, int width, int height, Color hoverColor, Color pressColor, String buttonText, RectStyle rectStyle) {
         super(id, x, y, width, height);
         this.buttonText = buttonText;
         this.hoverColor = hoverColor;
         this.pressColor = pressColor;
-        this.neutralColor = neutralColor;
-        this.rectStyle = new RectStyle();
-    }
-
-    public ButtonElement(String id, int x, int y, int width, int height, Color hoverColor, Color pressColor, Color neutralColor, String buttonText, RectStyle rectStyle) {
-        super(id, x, y, width, height);
-        this.buttonText = buttonText;
-        this.hoverColor = hoverColor;
-        this.pressColor = pressColor;
-        this.neutralColor = neutralColor;
+        this.neutralColor = rectStyle.getInnerColor();
         this.rectStyle = rectStyle;
     }
 
@@ -42,6 +33,7 @@ public class ButtonElement extends Element
         this.pressed = (Mouse.getEventButton() == 0) && (this.hovered == true) && (Mouse.getEventButtonState() == true);
         this.hovered = (mouseX > this.x) && (mouseX < this.width) && (mouseY > this.y) && (mouseY < this.height);
         Color color = (hovered) ? (pressed) ? pressColor : hoverColor : neutralColor;
-        this.rectStyle.render(this.x, this.y, this.width, this.height, color);
+        this.rectStyle.setInnerColor(color);
+        this.rectStyle.render(this.x, this.y, this.width, this.height);
     }
 }
