@@ -51,6 +51,21 @@ public class CardElement extends Element
                 this.description.render(this.x, this.y + this.height / 2);
                 break;
         }
+    }
 
+    public RectStyle getRectStyle() {
+        return rectStyle;
+    }
+
+    public int getPadding() {
+        return padding;
+    }
+
+    public TextStyle getDescription() {
+        return description;
+    }
+
+    public TextStyle getTitle() {
+        return title;
     }
 }

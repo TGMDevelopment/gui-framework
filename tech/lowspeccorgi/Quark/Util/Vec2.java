@@ -44,4 +44,20 @@ public class Vec2
     {
         return Y;
     }
+
+    /**
+     * This sets the X position
+     * @param x The X position to set
+     */
+    public void setX(int x) {
+        this.X = x;
+    }
+
+    /**
+     * This sets the Y position
+     * @param y The Y position to set
+     */
+    public void setY(int y) {
+        this.Y = y;
+    }
 }

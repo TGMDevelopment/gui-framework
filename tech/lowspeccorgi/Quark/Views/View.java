@@ -2,29 +2,27 @@ package tech.lowspeccorgi.Quark.Views;
 
 import tech.lowspeccorgi.Quark.Elements.Element;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class View
 {
-    private ArrayList<Element> elements;
-    private int x;
-    private int y;
-    private int width;
-    private String id;
+    protected List<Element> elements;
+    protected int x;
+    protected int y;
+    protected String id;
 
     /**
      * Creates a new view
      * @param elements The list of elements you want in the view
      * @param x The X position of the view
      * @param y The Y position of the view
-     * @param width The width in elements you want
      */
-    public View(String id, ArrayList<Element> elements, int x, int y, int width)
+    public View(String id, List<Element> elements, int x, int y)
     {
         this.elements = elements;
         this.x = x;
         this.y = y;
-        this.width = width;
         this.id = id;
     }
 
@@ -43,10 +41,7 @@ public class View
      */
     public void addElements(Element... e)
     {
-        for (int i = 0; i < e.length; i++)
-        {
-            elements.add(e[i]);
-        }
+        elements.addAll(Arrays.asList(e));
     }
 
     /**
@@ -62,7 +57,7 @@ public class View
      */
     public void onRender(int mouseX, int mouseY, float partialTicks)
     {
-        //
+        this.elements.forEach(e -> e.onRender(mouseX, mouseY, partialTicks));
     }
 
     /**
@@ -73,17 +68,23 @@ public class View
         //
     }
 
+    public void onKeyTyped(char typedChar, int keyCode)
+    {
+        //
+    }
+
+    public void onMouseClick(int mouseX, int mouseY, int mouseButton)
+    {
+        //
+    }
+
     /**
      * Gets the element list
      * @return Th element list
      */
-    public ArrayList<Element> getElements()
+    public List<Element> getElements()
     {
         return elements;
-    }
-
-    public int getWidth() {
-        return width;
     }
 
     public int getX() {

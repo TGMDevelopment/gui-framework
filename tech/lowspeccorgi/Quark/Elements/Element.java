@@ -137,6 +137,26 @@ public class Element
         return y;
     }
 
+    public void setHeight(int height)
+    {
+        this.height = height;
+    }
+
+    public void setWidth(int width)
+    {
+        this.width = width;
+    }
+
+    public void setX(int x)
+    {
+        this.x = x;
+    }
+
+    public void setY(int y)
+    {
+        this.y = y;
+    }
+
     public float getAspectRatio()
     {
         return this.width / this.height;
@@ -159,5 +179,10 @@ public class Element
     public void onMouseClick(int mouseX, int mouseY, int mouseButton)
     {
         //
+    }
+
+    public Element getInstance()
+    {
+        return this;
     }
 }

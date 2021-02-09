@@ -12,7 +12,7 @@ import java.io.IOException;
 public class EnhancedGuiScreen extends GuiScreen
 {
 
-    ElementManager em = new ElementManager();
+    protected ElementManager em = new ElementManager();
 
     @Override
     public void initGui()

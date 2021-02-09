@@ -1,6 +1,7 @@
 package tech.lowspeccorgi.Quark.Elements;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 
@@ -15,6 +16,7 @@ public class ElementManager
      */
     public ElementManager(Element... elements)
     {
+        assert false;
         Collections.addAll(this.elements, elements);
     }
 
@@ -24,7 +26,7 @@ public class ElementManager
      */
     public ElementManager()
     {
-        this.elements = new ArrayList<Element>();
+        this.elements = new ArrayList<>();
     }
 
     /**
@@ -51,10 +53,7 @@ public class ElementManager
      */
     public void addElements(Element... elements)
     {
-        for (int i = 0; i < elements.length; i++)
-        {
-            this.elements.add(elements[i]);
-        }
+        this.elements.addAll(Arrays.asList(elements));
     }
 
     public Optional<Element> getElementByID(String Id)

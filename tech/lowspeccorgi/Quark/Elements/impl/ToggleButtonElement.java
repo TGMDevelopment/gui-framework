@@ -33,12 +33,12 @@ public class ToggleButtonElement extends Element
     @Override
     public void onRender(int mouseX, int mouseY, float partialTicks)
     {
-        this.pressed = (Mouse.getEventButton() == 0) && (this.hovered == true) && (Mouse.getEventButtonState() == true);
-        this.hovered = (mouseX > this.x) && (mouseX < this.width) && (mouseY > this.y) && (mouseY < this.height);
+        this.pressed = (Mouse.getEventButton() == 0) && (this.hovered) && (Mouse.getEventButtonState());
+        this.hovered = (mouseX > this.x) && (mouseX < this.width + this.x) && (mouseY > this.y) && (mouseY < this.height + this.y);
         Color color = (hovered) ? (pressed) ? pressColor : hoverColor : neutralColor;
         this.rectStyle.setInnerColor(color);
         this.rectStyle.render(this.x, this.y, this.width, this.height);
-        this.states.get(this.pointer).render(this.x + this.width / 3, this.y + this.height / 3);
+        this.states.get(this.pointer).render(this.x, this.y);
     }
 
     public String getState()
@@ -48,10 +48,38 @@ public class ToggleButtonElement extends Element
 
     @Override
     public void onMouseClick(int mouseX, int mouseY, int mouseButton) {
-        if (mouseButton == 0 && this.hovered == true)
+        if (mouseButton == 0 && this.hovered)
         {
             this.pointer = (this.pointer == this.states.size() - 1) ? 0 : this.pointer + 1;
         }
         super.onMouseClick(mouseX, mouseY, mouseButton);
+    }
+
+    public ArrayList<TextStyle> getStates() {
+        return states;
+    }
+
+    public Color getHoverColor() {
+        return hoverColor;
+    }
+
+    public Color getNeutralColor() {
+        return neutralColor;
+    }
+
+    public Color getPressColor() {
+        return pressColor;
+    }
+
+    public int getPadding() {
+        return padding;
+    }
+
+    public int getPointer() {
+        return pointer;
+    }
+
+    public RectStyle getRectStyle() {
+        return rectStyle;
     }
 }

@@ -3,6 +3,7 @@ package tech.lowspeccorgi.Quark.Views;
 import tech.lowspeccorgi.Quark.Elements.Element;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 
@@ -17,6 +18,7 @@ public class ViewManager
      */
     public ViewManager(View... views)
     {
+        assert false;
         Collections.addAll(this.views, views);
     }
 
@@ -53,10 +55,7 @@ public class ViewManager
      */
     public void addViews(View... views)
     {
-        for (int i = 0; i < views.length; i++)
-        {
-            this.views.add(views[i]);
-        }
+        this.views.addAll(Arrays.asList(views));
     }
 
     public Optional<View> getViewByID(String Id)
@@ -72,7 +71,7 @@ public class ViewManager
      */
     public void onUpdate()
     {
-
+        views.forEach(View::onUpdate);
     }
 
     /**
@@ -82,5 +81,16 @@ public class ViewManager
     public void onRender(int mouseX, int mouseY, float partialTicks)
     {
         views.forEach(v -> v.onRender(mouseX, mouseY, partialTicks));
+    }
+
+
+    public void onKeyTyped(char typedChar, int keyCode)
+    {
+        views.forEach(v -> v.onKeyTyped(typedChar, keyCode));
+    }
+
+    public void onMouseClicked(int mouseX, int mouseY, int mouseButton)
+    {
+        views.forEach(v -> v.onMouseClick(mouseX, mouseY, mouseButton));
     }
 }

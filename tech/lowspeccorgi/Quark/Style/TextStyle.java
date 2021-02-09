@@ -45,4 +45,16 @@ public class TextStyle
     {
         return this.hasTextShadow;
     }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public void setHasTextShadow(boolean hasTextShadow) {
+        this.hasTextShadow = hasTextShadow;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }
