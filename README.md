@@ -3,6 +3,8 @@ An attempt to make a ui framework in Java, with the intent to be used with minec
 
 This is now in a semi working state :D.
 
+( please don't use yet )
+
 ## Should I use it?
 Depends. It's pretty basic but it works nicely, and has no problems, and probably will make GUI creation much easier. It also doesn't have much bloat in terms of things like elements, making it easy to make it your own. It's also pretty easy to make elements and customise them.
 
