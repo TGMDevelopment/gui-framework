@@ -8,9 +8,9 @@ import java.util.List;
 
 public class GridView extends View
 {
-    private final int xOffset;
-    private final int yOffset;
-    private final int gridWidth;
+    private int xOffset;
+    private int yOffset;
+    private int gridWidth;
     private StackingType stackingType;
 
     public GridView(String id, List<Element> elements, int x, int y, int xOffset, int yOffset, int gridWidth, StackingType stackingType)
@@ -46,5 +46,29 @@ public class GridView extends View
                 }
             }
         }
+    }
+
+    public int getxOffset() {
+        return xOffset;
+    }
+
+    public int getyOffset() {
+        return yOffset;
+    }
+
+    public void setGridWidth(int gridWidth) {
+        this.gridWidth = gridWidth;
+    }
+
+    public void setStackingType(StackingType stackingType) {
+        this.stackingType = stackingType;
+    }
+
+    public void setxOffset(int xOffset) {
+        this.xOffset = xOffset;
+    }
+
+    public void setyOffset(int yOffset) {
+        this.yOffset = yOffset;
     }
 }

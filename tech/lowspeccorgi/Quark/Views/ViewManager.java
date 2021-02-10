@@ -83,12 +83,24 @@ public class ViewManager
         views.forEach(v -> v.onRender(mouseX, mouseY, partialTicks));
     }
 
-
+    /**
+     * This should be called in the "keyTyped()" function
+     * @param typedChar The character typed
+     * @param keyCode The keycode for that character
+     * @author Basilicous
+     */
     public void onKeyTyped(char typedChar, int keyCode)
     {
         views.forEach(v -> v.onKeyTyped(typedChar, keyCode));
     }
 
+    /**
+     * This should be called in the "mouseClicked()" function
+     * @param mouseX The X position of the mouse when clicked
+     * @param mouseY The Y position of the mouse when clicked
+     * @param mouseButton Which mouse button was clicked
+     * @author Basilicous
+     */
     public void onMouseClicked(int mouseX, int mouseY, int mouseButton)
     {
         views.forEach(v -> v.onMouseClick(mouseX, mouseY, mouseButton));

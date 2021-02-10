@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ListView extends View
 {
-    private final int offset;
+    private int offset;
     private StackingType stackingType;
 
     public ListView(String id, List<Element> elements, int x, int y, int offset, StackingType stackingType)
@@ -25,5 +25,17 @@ public class ListView extends View
             elements.get(i).setX((this.stackingType == StackingType.Horizontal) ? this.x + (elements.get(i).getWidth() + this.offset) * i : this.x);
             elements.get(i).setY((this.stackingType == StackingType.Horizontal) ? this.y : this.y + (elements.get(i).getHeight() + this.offset) * i);
         }
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setStackingType(StackingType stackingType) {
+        this.stackingType = stackingType;
     }
 }
