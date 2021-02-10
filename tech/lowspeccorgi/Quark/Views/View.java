@@ -65,17 +65,17 @@ public class View
      */
     public void onUpdate()
     {
-        //
+
     }
 
     public void onKeyTyped(char typedChar, int keyCode)
     {
-        //
+        this.elements.forEach(e -> e.onKeyTyped(typedChar, keyCode));
     }
 
     public void onMouseClick(int mouseX, int mouseY, int mouseButton)
     {
-        //
+        this.elements.forEach(e -> e.onMouseClick(mouseX, mouseY, mouseButton));
     }
 
     /**

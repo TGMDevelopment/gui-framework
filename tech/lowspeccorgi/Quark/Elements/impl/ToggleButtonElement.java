@@ -19,8 +19,9 @@ public class ToggleButtonElement extends Element
     private int padding;
     private ArrayList<TextStyle> states;
     private int pointer = 0;
+    private ClickAction clickAction;
 
-    public ToggleButtonElement(String id, int x, int y, int width, int height, Color hoverColor, Color pressColor, RectStyle rectStyle, int padding, ArrayList<TextStyle> states) {
+    public ToggleButtonElement(String id, int x, int y, int width, int height, Color hoverColor, Color pressColor, RectStyle rectStyle, int padding, ArrayList<TextStyle> states, ClickAction clickAction) {
         super(id, x, y, width, height);
         this.hoverColor = hoverColor;
         this.pressColor = pressColor;
@@ -28,6 +29,7 @@ public class ToggleButtonElement extends Element
         this.rectStyle = rectStyle;
         this.padding = padding;
         this.states = states;
+        this.clickAction = clickAction;
     }
 
     @Override
@@ -51,6 +53,7 @@ public class ToggleButtonElement extends Element
         if (mouseButton == 0 && this.hovered)
         {
             this.pointer = (this.pointer == this.states.size() - 1) ? 0 : this.pointer + 1;
+            this.clickAction.onClick();
         }
         super.onMouseClick(mouseX, mouseY, mouseButton);
     }
