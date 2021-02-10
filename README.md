@@ -34,7 +34,8 @@ This isn't meant to have many Elements, to make it as extensible as possible, if
 ## Plans
 - [x] Add toggle button
 - [x] Add text to default button element
-- [ ] Views. Scrollview, listview and gridview are must have features
+- [x] Views. listview and gridview are must have features
+- [ ] Add collections, things that move the views, like scroll view, for example!
 - [ ] idk
 
 ## Example
