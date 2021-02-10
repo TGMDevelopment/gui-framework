@@ -29,8 +29,8 @@ public class TextStyle
      */
     public void render(int x, int y)
     {
-        if (hasTextShadow) Minecraft.getMinecraft().fontRendererObj.drawString(this.text, x, y, this.color.getRGB());
-        else Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow(this.text, x, y, this.color.getRGB());
+        if (hasTextShadow) Minecraft.getMinecraft().fontRendererObj.drawStringWithShadow(this.text, x, y, this.color.getRGB());
+        else Minecraft.getMinecraft().fontRendererObj.drawString(this.text, x, y, this.color.getRGB());
     }
 
     public Color getColor() {

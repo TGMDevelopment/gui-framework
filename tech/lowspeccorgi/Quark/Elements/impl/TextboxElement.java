@@ -5,6 +5,7 @@ import net.minecraft.util.ChatAllowedCharacters;
 import org.lwjgl.input.Keyboard;
 import tech.lowspeccorgi.Quark.Elements.Element;
 import tech.lowspeccorgi.Quark.Style.RectStyle;
+import tech.lowspeccorgi.Quark.Style.TextStyle;
 import tech.lowspeccorgi.Quark.primitives.Primitives;
 import java.awt.*;
 
@@ -14,27 +15,28 @@ public class TextboxElement extends Element {
     private final Minecraft mc = Minecraft.getMinecraft();
     private int charLimit = 0;
     private RectStyle rectStyle;
+    private TextStyle inputTextStyle;
+    private TextStyle placeholderText;
 
-    public TextboxElement(String id, int x, int y, int width, int height, RectStyle rectStyle) {
-        super(id, x, y, width, height);
-        this.rectStyle = rectStyle;
-    }
-
-    public TextboxElement(String id, int x, int y, int width, int height, int charLimit, RectStyle rectStyle) {
+    public TextboxElement(String id, int x, int y, int width, int height, int charLimit, RectStyle rectStyle,  TextStyle inputTextStyle, TextStyle placeholderText) {
         super(id, x, y, width, height);
         this.charLimit = charLimit;
         this.rectStyle = rectStyle;
+        this.inputTextStyle = inputTextStyle;
+        this.placeholderText = placeholderText;
     }
 
     @Override
     public void onRender(int mouseX, int mouseY, float partialTicks)
     {
-        int cursorPos = this.x + 5 + (mc.fontRendererObj.getStringWidth(sb.substring(0, this.cursorPosition)));
+        int cursorPos = this.x + 2 + (mc.fontRendererObj.getStringWidth(sb.substring(0, this.cursorPosition)));
         this.rectStyle.render(this.x, this.y, this.width, this.height);
-        Primitives.startScissorBox(this.y, this.height, this.x, this.width);
-        mc.fontRendererObj.drawString(sb.toString(), this.x, this.y, new Color(255, 255, 255, 255).getRGB());
-        Primitives.endScissorBox();
-        Primitives.drawRect(cursorPos, this.y ,cursorPos + 1, this.y + 10, -3092272);
+
+        if (this.sb.toString().equals("")) this.placeholderText.render(this.x, this.y);
+
+        this.inputTextStyle.setText(sb.toString());
+        this.inputTextStyle.render(this.x, this.y);
+        Primitives.drawRect(cursorPos, this.y,1, 10, -3092272);
     }
 
     @Override
@@ -62,7 +64,7 @@ public class TextboxElement extends Element {
                 }
                 break;
             default:
-                if (this.charLimit == 0 || sb.length() < this.charLimit)
+                if (sb.length() < this.charLimit)
                 {
                     if (ChatAllowedCharacters.isAllowedCharacter(typedChar))
                     {
