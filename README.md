@@ -1,5 +1,8 @@
 # NOTE:
-BEING REWRITEN!
+
+## Being redone, into a new framework, that is functionally completely different.
+
+![image](https://user-images.githubusercontent.com/59167551/123512758-25e7b700-d681-11eb-9f0e-fa1cb3026e38.png)
 
 # (Quark) -> Minecraft GUI framework
 An attempt to make a ui framework in Java, with the intent to be used with minecraft
